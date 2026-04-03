@@ -37,58 +37,89 @@
       top: 0;
       left: 0;
       width: 100%;
-      padding: 18px 40px;
+      background: rgba(0, 0, 0, 0.92);
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.2));
+      justify-content: space-between;
+      padding: 14px 16px;
       z-index: 1000;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
     .logo {
-      font-size: 32px;
-      font-weight: bold;
       color: #e50914;
+      font-size: 24px;
+      font-weight: bold;
       letter-spacing: 1px;
+      flex-shrink: 0;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+      flex: 1;
+      justify-content: flex-end;
+    }
+
+    .search-box {
+      background: #111;
+      border: 1px solid #333;
+      color: white;
+      padding: 8px 10px;
+      border-radius: 6px;
+      width: 110px;
+      outline: none;
+      font-size: 13px;
     }
 
     .nav-links {
       display: flex;
-      gap: 20px;
-      font-size: 15px;
+      gap: 10px;
+      overflow-x: auto;
+      white-space: nowrap;
+      max-width: 55%;
+      padding-bottom: 2px;
+    }
+
+    .nav-links a {
       color: #ddd;
-      flex-wrap: wrap;
+      font-size: 13px;
+      padding: 6px 8px;
+      border-radius: 4px;
     }
 
     .nav-links a:hover {
       color: #fff;
+      background: #181818;
     }
 
     .hero {
-      height: 92vh;
+      min-height: 92vh;
       background:
         linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0.25)),
-        linear-gradient(to right, rgba(0,0,0,0.85), rgba(0,0,0,0.1)),
+        linear-gradient(to right, rgba(0,0,0,0.85), rgba(0,0,0,0.15)),
         url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1400&q=80") center/cover no-repeat;
       display: flex;
       align-items: flex-end;
-      padding: 0 40px 70px;
+      padding: 110px 18px 50px;
     }
 
     .hero-content {
-      max-width: 650px;
+      max-width: 700px;
     }
 
     .tag {
       color: #e50914;
-      font-size: 14px;
+      font-size: 13px;
       margin-bottom: 12px;
-      letter-spacing: 3px;
+      letter-spacing: 4px;
       text-transform: uppercase;
     }
 
     .hero h1 {
-      font-size: 58px;
+      font-size: 52px;
       margin-bottom: 14px;
       line-height: 1.05;
     }
@@ -97,18 +128,19 @@
       color: #ddd;
       line-height: 1.6;
       font-size: 17px;
-      margin-bottom: 25px;
+      margin-bottom: 24px;
+      max-width: 600px;
     }
 
     .buttons {
       display: flex;
-      gap: 15px;
+      gap: 12px;
       flex-wrap: wrap;
     }
 
     .btn {
-      padding: 12px 28px;
-      border-radius: 5px;
+      padding: 12px 26px;
+      border-radius: 6px;
       font-size: 16px;
       font-weight: bold;
       border: none;
@@ -126,102 +158,159 @@
     }
 
     .btn-info {
-      background: rgba(109, 109, 110, 0.7);
+      background: rgba(109, 109, 110, 0.75);
       color: #fff;
     }
 
     .btn-info:hover {
-      background: rgba(109, 109, 110, 0.5);
+      background: rgba(109, 109, 110, 0.55);
     }
 
     .section {
-      padding: 10px 40px 25px;
-      margin-top: -30px;
+      padding: 12px 18px 24px;
+      margin-top: -10px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+      gap: 10px;
     }
 
     .section h2 {
-      margin-bottom: 15px;
-      font-size: 24px;
+      font-size: 28px;
+    }
+
+    .see-all {
+      color: #bbb;
+      font-size: 13px;
+    }
+
+    .see-all:hover {
+      color: white;
     }
 
     .row {
       display: flex;
-      gap: 14px;
+      gap: 12px;
       overflow-x: auto;
-      padding-bottom: 10px;
+      padding-bottom: 12px;
       scroll-behavior: smooth;
     }
 
     .card {
-      min-width: 190px;
+      min-width: 170px;
       background: #111;
-      border-radius: 8px;
+      border-radius: 10px;
       overflow: hidden;
       transition: transform 0.3s ease;
       flex-shrink: 0;
+      border: 1px solid rgba(255,255,255,0.06);
     }
 
     .card:hover {
-      transform: scale(1.08);
+      transform: scale(1.06);
     }
 
     .card img {
       width: 100%;
-      height: 260px;
+      height: 230px;
       object-fit: cover;
       display: block;
     }
 
     .card-title {
-      padding: 12px;
+      padding: 11px 12px 4px;
       font-size: 15px;
       color: #fff;
+      font-weight: bold;
+    }
+
+    .card-sub {
+      padding: 0 12px 12px;
+      font-size: 12px;
+      color: #aaa;
+    }
+
+    .feature-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      padding: 0 18px 26px;
+    }
+
+    .feature-box {
+      background: #111;
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 10px;
+      padding: 14px;
+      text-align: center;
+      color: #ddd;
+      font-size: 14px;
     }
 
     .footer {
       text-align: center;
-      padding: 30px 20px;
+      padding: 30px 18px;
       color: #888;
       font-size: 14px;
     }
 
     @media (max-width: 768px) {
-      .navbar {
-        padding: 15px 18px;
+      .logo {
+        font-size: 20px;
       }
 
-      .logo {
-        font-size: 24px;
+      .search-box {
+        width: 85px;
+        font-size: 12px;
+        padding: 7px 8px;
       }
 
       .nav-links {
-        gap: 12px;
-        font-size: 13px;
+        max-width: 52%;
+        gap: 6px;
+      }
+
+      .nav-links a {
+        font-size: 12px;
+        padding: 5px 6px;
       }
 
       .hero {
-        padding: 0 18px 45px;
-        height: 82vh;
+        min-height: 82vh;
+        padding: 95px 16px 38px;
       }
 
       .hero h1 {
-        font-size: 36px;
+        font-size: 38px;
       }
 
       .hero p {
         font-size: 14px;
       }
 
-      .section {
-        padding: 10px 18px 25px;
+      .btn {
+        font-size: 15px;
+        padding: 11px 20px;
+      }
+
+      .section h2 {
+        font-size: 22px;
       }
 
       .card {
-        min-width: 140px;
+        min-width: 145px;
       }
 
       .card img {
-        height: 210px;
+        height: 200px;
+      }
+
+      .feature-strip {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -230,12 +319,17 @@
 
   <nav class="navbar">
     <div class="logo">NETFLIX</div>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="categories.html">Categories</a>
-      <a href="anime-details.html">Details</a>
-      <a href="anime-watching.html">Watch</a>
-      <a href="login.html">Login</a>
+
+    <div class="nav-right">
+      <input class="search-box" type="text" placeholder="Search" />
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="categories.html">Category</a>
+        <a href="anime-details.html">Details</a>
+        <a href="anime-watching.html">Watch</a>
+        <a href="login.html">Login</a>
+      </div>
     </div>
   </nav>
 
@@ -244,92 +338,141 @@
       <div class="tag">New Season</div>
       <h1>Anime Night</h1>
       <p>
-        A dark Netflix-style homepage with a big banner, smooth cards, and
-        anime sections. You can change the text, images, and links later.
+        A better Netflix-style homepage with mobile menu, search box,
+        cleaner cards, and smoother sections for your anime website.
       </p>
       <div class="buttons">
-        <a href="anime-watching.html"><button class="btn btn-play">▶ Play</button></a>
-        <a href="anime-details.html"><button class="btn btn-info">More Info</button></a>
+        <a href="anime-watching.html">
+          <button class="btn btn-play">▶ Play</button>
+        </a>
+        <a href="anime-details.html">
+          <button class="btn btn-info">More Info</button>
+        </a>
       </div>
     </div>
   </section>
 
   <section class="section">
-    <h2>Trending Now</h2>
+    <div class="section-header">
+      <h2>Trending Now</h2>
+      <a class="see-all" href="categories.html">See all</a>
+    </div>
+
     <div class="row">
       <a class="card" href="anime-details.html">
         <img src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=500&q=80" alt="Anime 1">
         <div class="card-title">Jujutsu Kaisen</div>
+        <div class="card-sub">Action • Fantasy</div>
       </a>
+
       <a class="card" href="anime-details.html">
         <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=500&q=80" alt="Anime 2">
         <div class="card-title">Demon Slayer</div>
+        <div class="card-sub">Adventure • Action</div>
       </a>
+
       <a class="card" href="anime-details.html">
         <img src="https://images.unsplash.com/photo-1513106580091-1d82408b8cd6?auto=format&fit=crop&w=500&q=80" alt="Anime 3">
         <div class="card-title">Attack on Titan</div>
+        <div class="card-sub">Dark • Drama</div>
       </a>
+
       <a class="card" href="anime-details.html">
         <img src="https://images.unsplash.com/photo-1487180144351-b8472da7d491?auto=format&fit=crop&w=500&q=80" alt="Anime 4">
         <div class="card-title">Chainsaw Man</div>
+        <div class="card-sub">Horror • Action</div>
       </a>
+
       <a class="card" href="anime-details.html">
         <img src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?auto=format&fit=crop&w=500&q=80" alt="Anime 5">
         <div class="card-title">Blue Lock</div>
+        <div class="card-sub">Sports • Drama</div>
       </a>
     </div>
   </section>
 
   <section class="section">
-    <h2>Popular on Netflix</h2>
+    <div class="section-header">
+      <h2>Popular on Netflix</h2>
+      <a class="see-all" href="categories.html">See all</a>
+    </div>
+
     <div class="row">
       <a class="card" href="anime-details.html">
         <img src="https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?auto=format&fit=crop&w=500&q=80" alt="Anime 6">
         <div class="card-title">One Piece</div>
+        <div class="card-sub">Adventure • Long Run</div>
       </a>
+
       <a class="card" href="anime-details.html">
         <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=500&q=80" alt="Anime 7">
         <div class="card-title">Solo Leveling</div>
+        <div class="card-sub">Fantasy • Power</div>
       </a>
+
       <a class="card" href="anime-details.html">
         <img src="https://images.unsplash.com/photo-1518932945647-7a1c969f8be2?auto=format&fit=crop&w=500&q=80" alt="Anime 8">
         <div class="card-title">Tokyo Revengers</div>
+        <div class="card-sub">Action • Time</div>
       </a>
+
       <a class="card" href="anime-details.html">
         <img src="https://images.unsplash.com/photo-1542204165-65bf26472b9b?auto=format&fit=crop&w=500&q=80" alt="Anime 9">
         <div class="card-title">Naruto</div>
+        <div class="card-sub">Classic • Ninja</div>
       </a>
+
       <a class="card" href="anime-details.html">
         <img src="https://images.unsplash.com/photo-1512070800540-0d1b8e1f5d7a?auto=format&fit=crop&w=500&q=80" alt="Anime 10">
         <div class="card-title">Bleach</div>
+        <div class="card-sub">Soul • Battle</div>
       </a>
     </div>
   </section>
 
   <section class="section">
-    <h2>Continue Watching</h2>
+    <div class="section-header">
+      <h2>Continue Watching</h2>
+      <a class="see-all" href="anime-watching.html">Open player</a>
+    </div>
+
     <div class="row">
       <a class="card" href="anime-watching.html">
-        <img src="https://images.unsplash.com/photo-1505685296765-3a2736de412f?auto=format&fit=crop&w=500&q=80" alt="Anime 11">
+        <img src="https://images.unsplash.com/photo-1505685296765-3a2736de412f?auto=format&fit=crop&w=500&q=80" alt="Episode 1">
         <div class="card-title">Episode 1</div>
+        <div class="card-sub">Start watching</div>
       </a>
+
       <a class="card" href="anime-watching.html">
-        <img src="https://images.unsplash.com/photo-1519999482648-25049ddd37b1?auto=format&fit=crop&w=500&q=80" alt="Anime 12">
+        <img src="https://images.unsplash.com/photo-1519999482648-25049ddd37b1?auto=format&fit=crop&w=500&q=80" alt="Episode 2">
         <div class="card-title">Episode 2</div>
+        <div class="card-sub">Continue story</div>
       </a>
+
       <a class="card" href="anime-watching.html">
-        <img src="https://images.unsplash.com/photo-1460881680858-30d872d5b530?auto=format&fit=crop&w=500&q=80" alt="Anime 13">
+        <img src="https://images.unsplash.com/photo-1460881680858-30d872d5b530?auto=format&fit=crop&w=500&q=80" alt="Episode 3">
         <div class="card-title">Episode 3</div>
+        <div class="card-sub">More action</div>
       </a>
+
       <a class="card" href="anime-watching.html">
-        <img src="https://images.unsplash.com/photo-1499364615650-ec38552f4f34?auto=format&fit=crop&w=500&q=80" alt="Anime 14">
+        <img src="https://images.unsplash.com/photo-1499364615650-ec38552f4f34?auto=format&fit=crop&w=500&q=80" alt="Episode 4">
         <div class="card-title">Episode 4</div>
+        <div class="card-sub">Next mission</div>
       </a>
+
       <a class="card" href="anime-watching.html">
-        <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=500&q=80" alt="Anime 15">
+        <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=500&q=80" alt="Episode 5">
         <div class="card-title">Episode 5</div>
+        <div class="card-sub">Keep watching</div>
       </a>
     </div>
+  </section>
+
+  <section class="feature-strip">
+    <div class="feature-box">Fast mobile layout</div>
+    <div class="feature-box">Anime-style homepage</div>
+    <div class="feature-box">Ready for Vercel</div>
   </section>
 
   <div class="footer">
@@ -337,4 +480,4 @@
   </div>
 
 </body>
-</html>
+          </html>
